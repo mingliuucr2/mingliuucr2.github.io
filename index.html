@@ -1,18 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ming Liu | UC Riverside</title>
+  <meta name="description" content="Ming Liu at UC Riverside. Near-field optics, nanophotonics, plasmonics, and two-dimensional optoelectronics.">
+  <title>Ming Liu | Electrical &amp; Computer Engineering | UC Riverside</title>
+  <style>
+    /* All styles live here. No scripts, build tools, or external fonts. */
+    :root { --ink:#252a30; --muted:#626973; --blue:#174b78; --rule:#dce1e6; --gold:#b58a36; }
+    * { box-sizing:border-box; }
+    html { scroll-padding-top:24px; }
+    body { margin:0; background:#fff; color:var(--ink); font:17px/1.7 Georgia,"Times New Roman",serif; }
+    a { color:var(--blue); text-decoration-thickness:1px; text-underline-offset:3px; }
+    a:hover { text-decoration-thickness:2px; }
+    a:focus-visible { outline:2px solid var(--blue); outline-offset:5px; }
+    p { margin:0 0 1em; } p:last-child { margin-bottom:0; }
+    .page { max-width:1000px; margin:auto; padding:0 42px; }
+    .skip-link { position:absolute; top:-80px; left:16px; padding:8px 16px; background:white; z-index:2; }
+    .skip-link:focus { top:8px; }
+    .masthead { border-top:4px solid var(--blue); padding-top:50px; }
+    .identity { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; padding-bottom:30px; }
+    h1 { font-size:49px; font-weight:400; letter-spacing:-1.5px; line-height:1.15; margin:0 0 15px; }
+    .affiliation { font:15px/1.65 Arial,Helvetica,sans-serif; color:var(--muted); }
+    .university { color:var(--ink); }
+    .profile-links { font:14px/1.8 Arial,Helvetica,sans-serif; text-align:right; white-space:nowrap; }
+    .profile-links a { display:block; }
+    nav { border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
+    nav ul { display:flex; flex-wrap:wrap; gap:0 29px; padding:8px 0; margin:0; list-style:none; }
+    nav a { display:inline-block; padding:7px 0; color:var(--ink); text-decoration:none; font:14px/1.5 Arial,Helvetica,sans-serif; }
+    nav a:hover { color:var(--blue); text-decoration:underline; }
+    .section { display:grid; grid-template-columns:150px minmax(0,1fr); gap:28px; padding:36px 0; border-bottom:1px solid var(--rule); }
+    h2 { margin:1px 0 0; color:var(--blue); font-size:23px; line-height:1.3; font-weight:400; }
+    h3 { margin:0 0 9px; font-size:20px; font-weight:400; line-height:1.35; }
+    .section-label { font:11px/1.5 Arial,Helvetica,sans-serif; letter-spacing:1.4px; text-transform:uppercase; color:var(--muted); margin:26px 0 18px; }
+    .interests { color:var(--muted); font-size:15px; }
+    .highlights { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:27px 30px; }
+    .highlight { border-top:2px solid var(--rule); padding-top:14px; }
+    .highlight:first-child { border-top-color:var(--gold); }
+    .highlight p { font-size:15px; line-height:1.65; margin-bottom:9px; }
+    .paper-links { font:12px/1.8 Arial,Helvetica,sans-serif; }
+    .publications { list-style:none; counter-reset:papers; margin:24px 0 0; padding:0; }
+    .publication { counter-increment:papers; position:relative; padding:0 0 22px 31px; }
+    .publication:last-child { padding-bottom:0; }
+    .publication::before { content:counter(papers,decimal-leading-zero); position:absolute; left:0; top:3px; font:11px/1.7 Arial,Helvetica,sans-serif; color:var(--muted); }
+    .paper-title { font-size:16px; line-height:1.5; }
+    .paper-authors { margin:5px 0 0; color:var(--muted); font-size:14px; line-height:1.5; }
+    .paper-venue { margin:3px 0 0; font-size:14px; line-height:1.5; }
+    .note { color:var(--muted); font-size:15px; }
+    address { font-style:normal; }
+    .contact-details { display:grid; grid-template-columns:65px minmax(0,1fr); gap:8px 18px; margin:0; font-size:16px; }
+    .contact-details dt { color:var(--muted); } .contact-details dd { margin:0; overflow-wrap:anywhere; }
+    footer { padding:23px 0 36px; display:flex; justify-content:space-between; gap:20px; color:var(--muted); font:12px/1.6 Arial,Helvetica,sans-serif; }
+    @media (max-width:680px) {
+      .page { padding:0 23px; } .masthead { padding-top:32px; }
+      .identity { display:block; padding-bottom:24px; } h1 { font-size:43px; }
+      .profile-links { text-align:left; margin-top:18px; white-space:normal; display:flex; flex-wrap:wrap; gap:5px 22px; }
+      nav ul { column-gap:22px; } .section { grid-template-columns:minmax(0,1fr); gap:18px; padding:28px 0; }
+      .highlights { column-gap:22px; } footer { flex-wrap:wrap; }
+    }
+    @media (max-width:440px) { .highlights { grid-template-columns:minmax(0,1fr); } }
+    @media print {
+      body { font-size:11pt; } .page { max-width:none; padding:0; } .masthead { padding-top:15px; }
+      nav,.skip-link,.back-to-top { display:none; } .section { padding:18px 0; }
+      .highlight,.publication { break-inside:avoid; } a { color:inherit; text-decoration:none; }
+    }
+  </style>
 </head>
-<body style="font-family:Arial; max-width:800px; margin:60px auto; padding:20px;">
-  <h1>Ming Liu</h1>
-  <p>Department of Electrical and Computer Engineering</p>
-  <p>University of California, Riverside</p>
-  <hr>
-  <h2>Research</h2>
-  <p>Nanophotonics, plasmonics, nanoscale imaging, and quantum sensing.</p>
-  <h2>Publications</h2>
-  <p>Coming soon.</p>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+    <!-- UPDATE: Name, affiliation, and verified profile links. -->
+    <header class="masthead">
+      <div class="identity">
+        <div>
+          <h1>Ming Liu</h1>
+          <div class="affiliation">Department of Electrical and Computer Engineering<br><span class="university">University of California, Riverside</span></div>
+        </div>
+        <div class="profile-links">
+          <a href="https://scholar.google.com/citations?user=1bPwuWgAAAAJ&amp;hl=en">Google Scholar</a>
+          <a href="https://profiles.ucr.edu/app/home/profile/mingliu">UCR Faculty Profile</a>
+        </div>
+      </div>
+      <nav aria-label="Main navigation"><ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul></nav>
+    </header>
+    <main id="main">
+      <!-- UPDATE: About. Keep biographical statements tied to confirmed sources. -->
+      <section class="section" id="about" aria-labelledby="about-heading">
+        <h2 id="about-heading">About</h2>
+        <div>
+          <p>I am a faculty member in Electrical and Computer Engineering at the University of California, Riverside. My research explores light–matter interactions at the nanoscale, with an emphasis on optical imaging and optoelectronic devices.</p>
+          <p class="note">My work spans near-field optics, plasmonics, and two-dimensional materials—from controlling light on a chip to revealing how nanoscale devices generate photocurrent.</p>
+        </div>
+      </section>
+      <!-- UPDATE: Research highlights. Link every result to its published paper. -->
+      <section class="section" id="research" aria-labelledby="research-heading">
+        <h2 id="research-heading">Research</h2>
+        <div>
+          <p>Developing tools to concentrate, probe, and control light at the nanoscale.</p>
+          <p class="interests">Nanophotonics · Plasmonics · Nanoscale imaging · Quantum sensing</p>
+          <div class="section-label">Selected research highlights</div>
+          <div class="highlights">
+            <article class="highlight">
+              <h3>Seeing how light becomes electricity</h3>
+              <p>Three-dimensional near-field photocurrent imaging separates photovoltaic and photothermoelectric responses in MoS<sub>2</sub>–gold interfaces, revealing how local electrical and thermal processes shape photodetection.</p>
+              <div class="paper-links"><a href="https://doi.org/10.1126/sciadv.adv7614">Science Advances · 2025</a></div>
+            </article>
+            <article class="highlight">
+              <h3>Optical imaging at the nanometer scale</h3>
+              <p>Efficient fiber-coupled nanofocusing enables lens-free Raman imaging at 1 nm resolution. A nanoscale white-light source extends transmission and scattering spectroscopy to 6 nm resolution on carbon nanotubes.</p>
+              <div class="paper-links"><a href="https://doi.org/10.1038/s41566-019-0456-9">Nature Photonics · 2019</a><br><a href="https://doi.org/10.1038/s41467-021-27216-5">Nature Communications · 2021</a></div>
+            </article>
+            <article class="highlight">
+              <h3>Graphene for on-chip optical modulation</h3>
+              <p>Waveguide-integrated graphene enables compact, broadband electrical control of light. A double-layer design further develops this approach for integrated optoelectronic devices.</p>
+              <div class="paper-links"><a href="https://doi.org/10.1038/nature10067">Nature · 2011</a><br><a href="https://doi.org/10.1021/nl204202k">Nano Letters · 2012</a></div>
+            </article>
+            <article class="highlight">
+              <h3>Plasmonic forces and quantum emitters</h3>
+              <p>Light-driven plasmonic motors convert optical excitation into rotation. More recent work uses plasmonic trapping to position nitrogen-vacancy nanodiamonds at a nanofocusing tip and enhance their fluorescence.</p>
+              <div class="paper-links"><a href="https://doi.org/10.1038/nnano.2010.128">Nature Nanotechnology · 2010</a><br><a href="https://doi.org/10.1021/acs.nanolett.4c03163">Nano Letters · 2024</a></div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- UPDATE: Duplicate a publication li, edit metadata and DOI, keep newest first. -->
+      <section class="section" id="publications" aria-labelledby="publications-heading">
+        <h2 id="publications-heading">Publications</h2>
+        <div>
+          <p class="note">Selected journal articles. <a href="https://scholar.google.com/citations?user=1bPwuWgAAAAJ&amp;hl=en">View the full list on Google Scholar</a>.</p>
+          <ol class="publications">
+            <li class="publication">
+              <a class="paper-title" href="https://doi.org/10.1126/sciadv.adv7614">Deciphering photocurrent mechanisms at the nanoscale in van der Waals interfaces for enhanced optoelectronic applications</a>
+              <p class="paper-authors">D. Xu et al.</p>
+              <p class="paper-venue"><cite>Science Advances</cite> <strong>11</strong>, eadv7614 (2025).</p>
+            </li>
+            <li class="publication">
+              <a class="paper-title" href="https://doi.org/10.1021/acs.nanolett.4c03163">Enhanced Plasmonic Trapping and Fluorescent Emission of Nitrogen-Vacancy Nanodiamonds Using a High-Efficiency Nanofocusing Device</a>
+              <p class="paper-authors">B. Liang et al.</p>
+              <p class="paper-venue"><cite>Nano Letters</cite> <strong>24</strong>, 11661–11668 (2024).</p>
+            </li>
+            <li class="publication">
+              <a class="paper-title" href="https://doi.org/10.1038/s41467-021-27216-5">6 nm super-resolution optical transmission and scattering spectroscopic imaging of carbon nanotubes using a nanometer-scale white light source</a>
+              <p class="paper-authors">X. Ma et al.</p>
+              <p class="paper-venue"><cite>Nature Communications</cite> <strong>12</strong>, 6868 (2021).</p>
+            </li>
+            <li class="publication">
+              <a class="paper-title" href="https://doi.org/10.1038/s41566-019-0456-9">High external-efficiency nanofocusing for lens-free near-field optical nanoscopy</a>
+              <p class="paper-authors">S. Kim et al.</p>
+              <p class="paper-venue"><cite>Nature Photonics</cite> <strong>13</strong>, 636–643 (2019).</p>
+            </li>
+            <li class="publication">
+              <a class="paper-title" href="https://doi.org/10.1021/acs.nanolett.7b03449">Capillary-Force-Assisted Clean-Stamp Transfer of Two-Dimensional Materials</a>
+              <p class="paper-authors">X. Ma et al.</p>
+              <p class="paper-venue"><cite>Nano Letters</cite> <strong>17</strong>, 6961–6967 (2017).</p>
+            </li>
+            <li class="publication">
+              <a class="paper-title" href="https://doi.org/10.1021/nl204202k">Double-Layer Graphene Optical Modulator</a>
+              <p class="paper-authors"><strong>M. Liu</strong>, X. Yin, and X. Zhang.</p>
+              <p class="paper-venue"><cite>Nano Letters</cite> <strong>12</strong>, 1482–1485 (2012).</p>
+            </li>
+            <li class="publication">
+              <a class="paper-title" href="https://doi.org/10.1038/nature10067">A graphene-based broadband optical modulator</a>
+              <p class="paper-authors"><strong>M. Liu</strong> et al.</p>
+              <p class="paper-venue"><cite>Nature</cite> <strong>474</strong>, 64–67 (2011).</p>
+            </li>
+            <li class="publication">
+              <a class="paper-title" href="https://doi.org/10.1038/nnano.2010.128">Light-driven nanoscale plasmonic motors</a>
+              <p class="paper-authors"><strong>M. Liu</strong>, T. Zentgraf, Y. Liu, G. Bartal, and X. Zhang.</p>
+              <p class="paper-venue"><cite>Nature Nanotechnology</cite> <strong>5</strong>, 570–573 (2010).</p>
+            </li>
+            <li class="publication">
+              <a class="paper-title" href="https://doi.org/10.1103/PhysRevLett.101.047401">Plasmon-Induced Transparency in Metamaterials</a>
+              <p class="paper-authors">S. Zhang, D. A. Genov, Y. Wang, <strong>M. Liu</strong>, and X. Zhang.</p>
+              <p class="paper-venue"><cite>Physical Review Letters</cite> <strong>101</strong>, 047401 (2008).</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+      <!-- UPDATE: Contact details sourced from the UCR faculty profile. -->
+      <section class="section" id="contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact</h2>
+        <address><dl class="contact-details">
+          <dt>Email</dt><dd><a href="mailto:ming@ece.ucr.edu">ming@ece.ucr.edu</a></dd>
+          <dt>Office</dt><dd>321 Winston Chung Hall</dd>
+          <dt>Address</dt><dd>Department of Electrical and Computer Engineering<br>University of California, Riverside<br>Riverside, CA 92521</dd>
+        </dl></address>
+      </section>
+    </main>
+    <footer><span>Ming Liu · University of California, Riverside</span><a class="back-to-top" href="#top">Back to top ↑</a></footer>
+  </div>
 </body>
 </html>
