@@ -20,6 +20,8 @@
     .skip-link:focus { top:8px; }
     .masthead { border-top:4px solid var(--blue); padding-top:50px; }
     .identity { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; padding-bottom:30px; }
+    .profile-main { display:flex; align-items:center; gap:28px; min-width:0; }
+    .portrait { display:block; width:125px; height:150px; flex:none; object-fit:cover; }
     h1 { font-size:49px; font-weight:400; letter-spacing:-1.5px; line-height:1.15; margin:0 0 15px; }
     .affiliation { font:15px/1.65 Arial,Helvetica,sans-serif; color:var(--muted); }
     .university { color:var(--ink); }
@@ -54,6 +56,9 @@
     @media (max-width:680px) {
       .page { padding:0 23px; } .masthead { padding-top:32px; }
       .identity { display:block; padding-bottom:24px; } h1 { font-size:43px; }
+      .profile-main { align-items:flex-start; gap:18px; }
+      .portrait { width:90px; height:108px; }
+      .identity h1 { font-size:34px; }
       .profile-links { text-align:left; margin-top:18px; white-space:normal; display:flex; flex-wrap:wrap; gap:5px 22px; }
       nav ul { column-gap:22px; } .section { grid-template-columns:minmax(0,1fr); gap:18px; padding:28px 0; }
       .highlights { column-gap:22px; } footer { flex-wrap:wrap; }
@@ -72,9 +77,12 @@
     <!-- UPDATE: Name, affiliation, and verified profile links. -->
     <header class="masthead">
       <div class="identity">
-        <div>
+        <div class="profile-main">
+          <img class="portrait" src="assets/ming-liu.jpg" alt="Ming Liu" width="250" height="300">
+          <div>
           <h1>Ming Liu</h1>
           <div class="affiliation">Department of Electrical and Computer Engineering<br><span class="university">University of California, Riverside</span></div>
+          </div>
         </div>
         <div class="profile-links">
           <a href="https://scholar.google.com/citations?user=1bPwuWgAAAAJ&amp;hl=en">Google Scholar</a>

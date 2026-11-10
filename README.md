@@ -6,6 +6,7 @@
 
 - `index.html`：全部网页内容与样式。`UPDATE:` 注释标出常用修改位置。
 - `README.md`：维护说明与资料来源，不显示在主页中。
+- `assets/ming-liu.jpg`：本人提供的头像，保留原比例；从原始 AVIF 转为 JPEG 以兼容浏览器。
 
 用浏览器打开 `index.html` 即可预览。也可以在仓库文件夹中运行：
 
@@ -31,7 +32,7 @@ python3 -m http.server 8000 --bind 127.0.0.1
 
 主页按本人要求不展示 Research Group 区块或成员名单。
 
-新增图片或 PDF 时可再建 `assets/` 文件夹，使用相对路径，例如 `assets/photo.jpg`；目前无需额外资源。不要在网页中写 Mac 绝对路径。
+新增图片或 PDF 放入 `assets/` 文件夹并使用相对路径。替换头像时可沿用 `assets/ming-liu.jpg`，或同步修改页首图片的路径及尺寸。不要在网页中写 Mac 绝对路径。
 
 ## 确认设计后，用 GitHub Desktop 发布
 
@@ -72,4 +73,5 @@ python3 -m http.server 8000 --bind 127.0.0.1
 - Bayesian optimization、electrochemical interfaces 与 NV quantum sensing 的研究方向来自本人本轮说明。未找到可直接归属本人的 Bayesian optimization 或 electrochemical-interface 专题论文，所以网页将其表述为研究兴趣/方向，没有编造论文或声称已完成相应实验。NV 已发表工作的确证范围是捕获与荧光增强，没有声称已测得量子传感性能。
 - Biography 沿用第一人称，并加入用户建议的 ML 表述；Research 以 nanofocusing 为主线，明确展示 physics-guided learning、inverse design、Bayesian optimization 和 ML-assisted nanoscale imaging。
 - 本轮共 16 篇论文，其中 Nano Letters 5 篇、ACS Applied Materials & Interfaces 4 篇；题目、作者身份、期刊、卷页、年份与 DOI 已按个人记录、出版商页面和 DOI 注册数据交叉核对。
+- 头像由本人于本轮提供，页首在姓名左侧显示；使用原图比例，不改变面部内容。
 - 补入 [Thermal Rectifier and Thermal Transistor of 1T/2H MoS₂ for Heat Flow Management](https://doi.org/10.1021/acsami.1c21226)，ACS AMI 14, 4434–4442 (2022)，及 [Experimental Study on Thermal Conductivity and Rectification in Suspended Monolayer MoS₂](https://doi.org/10.1021/acsami.0c07544)，ACS AMI 12, 28306–28312 (2020)。两篇 DOI 注册记录中的 Ming Liu 均与本人 ORCID 一致。
