@@ -24,7 +24,7 @@ python3 -m http.server 8000 --bind 127.0.0.1
 常用修改：
 
 1. About：修改 `id="about"` 下的文字。
-2. Research：修改 `id="research"` 下的方向与四个亮点。每条成果保留原文链接，不把计划写成已完成成果。
+2. Research：修改 `id="research"` 下的方向与六个亮点。每条成果保留原文链接，不把计划写成已完成成果。
 3. Publications：在 `ol.publications` 中复制一个完整的 `<li class="publication">…</li>`，替换作者、题目、期刊、卷、页码或文章编号、年份和 DOI，按年份倒序插入。编号自动生成。长作者列表使用首位作者加 `et al.`；不改变作者顺序。
 4. Contact：确认邮箱、办公室与地址后修改。
 5. 样式：文件顶部 `<style>` 内修改；颜色集中在 `:root`，手机样式在 `@media` 内。
@@ -41,7 +41,7 @@ python3 -m http.server 8000 --bind 127.0.0.1
 4. 点击 **Push origin**。GitHub Pages 按仓库现有发布设置更新；若有延迟，可在 GitHub 的 Actions / Pages 查看状态。
 5. 检查 <https://mingliuucr2.github.io/>。只提交到本地、未推送时，公开网站不会更新。
 
-发布需要本人明确授权。本次主页发布已获得授权；仓库的 Pages 设置保持原样。
+发布需要本人明确授权。2026-11-09 的初版已获授权并发布；本轮论文与研究方向更新也已获本人明确授权发布。仓库的 Pages 设置保持原样。
 
 ## 内容依据与亮点选择
 
@@ -60,3 +60,16 @@ python3 -m http.server 8000 --bind 127.0.0.1
 - [Physical Review Letters 2008](https://doi.org/10.1103/PhysRevLett.101.047401)：等离激元诱导透明；保留高影响力合作工作，按原作者顺序引用。
 
 未来更新时重新核对原文，尤其是联系方式和新论文的正式出版信息。
+
+
+## 本轮核对记录（已获发布授权，2026-11-09）
+
+- 已展开核对用户 Scholar 的全部 64 条记录，交叉检查 [ORCID 0000-0001-9849-1845](https://orcid.org/0000-0001-9849-1845) 的公开作品记录与出版商页面。Scholar/ORCID 可能缺漏，因此不声称这是完整职业生涯目录。
+- Nano Letters：确认 5 篇，现已全部纳入本页：2012 双层石墨烯调制器、2016 银纳米线探针、2017 洁净转移、2019 远程激发 TERS、2024 NV 纳米金刚石。没有按期刊声望分组，统一按年份倒序。
+- 期刊已由本人更正为 ACS Applied Materials & Interfaces（ACS AMI）。本页纳入已核对的全部 4 篇：2020 热输运、2022 热整流与热晶体管、2022 physics-guided inverse design、2023 ML-assisted optical microscopy。
+- 新增 [Nano Letters 2016](https://doi.org/10.1021/acs.nanolett.6b02802) 和 [Nano Letters 2019](https://doi.org/10.1021/acs.nanolett.8b03399)，题目、年份、卷页与 DOI 以出版商记录为准。
+- ML 新增正式论文：[Physics-Guided Neural-Network-Based Inverse Design of a Photonic–Plasmonic Nanodevice for Superfocusing](https://doi.org/10.1021/acsami.2c05083)，ACS Applied Materials & Interfaces 14, 27397–27404 (2022)；[Machine Learning Enhanced Optical Microscopy for the Rapid Morphology Characterization of Silver Nanoparticles](https://doi.org/10.1021/acsami.3c02448)，ACS Applied Materials & Interfaces 15, 18244–18251 (2023)；[Strategical Deep Learning for Photonic Bound States in the Continuum](https://doi.org/10.1002/lpor.202100658)，Laser & Photonics Reviews 16, 2100658 (2022)。不把该文的封面条目 DOI 10.1002/lpor.202270049 重复计为研究论文。
+- Bayesian optimization、electrochemical interfaces 与 NV quantum sensing 的研究方向来自本人本轮说明。未找到可直接归属本人的 Bayesian optimization 或 electrochemical-interface 专题论文，所以网页将其表述为研究兴趣/方向，没有编造论文或声称已完成相应实验。NV 已发表工作的确证范围是捕获与荧光增强，没有声称已测得量子传感性能。
+- Biography 沿用第一人称，并加入用户建议的 ML 表述；Research 以 nanofocusing 为主线，明确展示 physics-guided learning、inverse design、Bayesian optimization 和 ML-assisted nanoscale imaging。
+- 本轮共 16 篇论文，其中 Nano Letters 5 篇、ACS Applied Materials & Interfaces 4 篇；题目、作者身份、期刊、卷页、年份与 DOI 已按个人记录、出版商页面和 DOI 注册数据交叉核对。
+- 补入 [Thermal Rectifier and Thermal Transistor of 1T/2H MoS₂ for Heat Flow Management](https://doi.org/10.1021/acsami.1c21226)，ACS AMI 14, 4434–4442 (2022)，及 [Experimental Study on Thermal Conductivity and Rectification in Suspended Monolayer MoS₂](https://doi.org/10.1021/acsami.0c07544)，ACS AMI 12, 28306–28312 (2020)。两篇 DOI 注册记录中的 Ming Liu 均与本人 ORCID 一致。
