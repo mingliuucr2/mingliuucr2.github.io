@@ -63,6 +63,14 @@ python3 -m http.server 8000 --bind 127.0.0.1
 
 未来更新时重新核对原文，尤其是联系方式和新论文的正式出版信息。
 
+## 学术服务与主要研究贡献
+
+- Graduate Advisor for Enrolled Students 的职责由本人在本轮明确提供，写入 About；没有从旧版研究生手册推断当前职责或任期。
+- Research 开头按本人要求明确写出主要贡献为发明 high-external-efficiency nanofocusing，并附 [Nature Photonics 2019 原文](https://doi.org/10.1038/s41566-019-0456-9)。
+- 论文摘要报告外部纳米聚焦效率约 50%；[合作者 Xuezhi Ma 的项目介绍](https://sites.google.com/view/xuezhi-ma/research/high-external-efficiency-nanofocusing-for-lens-free-near-field-optical-nano) 明确描述超过 50% 的光纤入射光聚焦到纳米线尖端。
+- 本人进一步明确 5 nm 指光学热点尺寸，故网页写作 “an optical hotspot approximately 5 nm in size”。不将其误写成 5 nm³ 体积或探针尖端半径；5 nm 热点尺寸的直接依据为本人的澄清。
+
+
 ## Teaching 内容依据
 
 用户提供的课程档案中，以下六份 syllabus 均明确列 Ming Liu 为 instructor；Teaching 仅据此提取课程名称和教学范围。没有把听课评估、他人课程示例或参考资料算作本人的授课经历。课程文件不随网页发布。
