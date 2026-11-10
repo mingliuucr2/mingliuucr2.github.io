@@ -49,6 +49,10 @@
     .paper-authors { margin:5px 0 0; color:var(--muted); font-size:14px; line-height:1.5; }
     .paper-venue { margin:3px 0 0; font-size:14px; line-height:1.5; }
     .note { color:var(--muted); font-size:15px; }
+    .teaching-level { margin:22px 0 12px; font-size:18px; }
+    .course-list { display:grid; grid-template-columns:125px minmax(0,1fr); gap:9px 18px; margin:0; font-size:16px; }
+    .course-list dt { color:var(--blue); font:13px/1.9 Arial,Helvetica,sans-serif; }
+    .course-list dd { margin:0; }
     address { font-style:normal; }
     .contact-details { display:grid; grid-template-columns:65px minmax(0,1fr); gap:8px 18px; margin:0; font-size:16px; }
     .contact-details dt { color:var(--muted); } .contact-details dd { margin:0; overflow-wrap:anywhere; }
@@ -93,6 +97,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#research">Research</a></li>
         <li><a href="#publications">Publications</a></li>
+        <li><a href="#teaching">Teaching</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul></nav>
     </header>
@@ -233,6 +238,26 @@
               <p class="paper-venue"><cite>Physical Review Letters</cite> <strong>101</strong>, 047401 (2008).</p>
             </li>
           </ol>
+        </div>
+      </section>
+      <!-- UPDATE: Courses taught. Confirm course titles and instructor identity against the syllabus. -->
+      <section class="section" id="teaching" aria-labelledby="teaching-heading">
+        <h2 id="teaching-heading">Teaching</h2>
+        <div>
+          <p>My teaching spans the electrical engineering curriculum, from foundational circuit analysis and electronic design to electromagnetics and graduate-level quantum mechanics. This breadth allows me to connect practical engineering methods with the physical principles behind modern devices and optical systems.</p>
+          <p class="note">Courses I have taught at UC Riverside include:</p>
+          <h3 class="teaching-level">Undergraduate</h3>
+          <dl class="course-list">
+            <dt>EE 030B</dt><dd>Fundamentals of Electric Circuits II</dd>
+            <dt>EE 100A</dt><dd>Electronic Circuits I</dd>
+            <dt>EE 100B</dt><dd>Electronic Circuits II</dd>
+            <dt>EE 117</dt><dd>Electromagnetics II</dd>
+          </dl>
+          <h3 class="teaching-level">Graduate</h3>
+          <dl class="course-list">
+            <dt>EE 201 / MSE 207</dt><dd>Applied Quantum Mechanics</dd>
+            <dt>EE 204</dt><dd>Advanced Electromagnetics</dd>
+          </dl>
         </div>
       </section>
       <!-- UPDATE: Contact details sourced from the UCR faculty profile. -->

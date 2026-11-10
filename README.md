@@ -29,6 +29,7 @@ python3 -m http.server 8000 --bind 127.0.0.1
 3. Publications：在 `ol.publications` 中复制一个完整的 `<li class="publication">…</li>`，替换作者、题目、期刊、卷、页码或文章编号、年份和 DOI，按年份倒序插入。编号自动生成。长作者列表使用首位作者加 `et al.`；不改变作者顺序。
 4. Contact：确认邮箱、办公室与地址后修改。
 5. 样式：文件顶部 `<style>` 内修改；颜色集中在 `:root`，手机样式在 `@media` 内。
+6. Teaching：在 `id="teaching"` 下更新课程；以本人任课的 syllabus 确认代码与正式名称。这里记录授课经历，不代表所有课程都在当前学期开设。
 
 主页按本人要求不展示 Research Group 区块或成员名单。
 
@@ -61,6 +62,21 @@ python3 -m http.server 8000 --bind 127.0.0.1
 - [Physical Review Letters 2008](https://doi.org/10.1103/PhysRevLett.101.047401)：等离激元诱导透明；保留高影响力合作工作，按原作者顺序引用。
 
 未来更新时重新核对原文，尤其是联系方式和新论文的正式出版信息。
+
+## Teaching 内容依据
+
+用户提供的课程档案中，以下六份 syllabus 均明确列 Ming Liu 为 instructor；Teaching 仅据此提取课程名称和教学范围。没有把听课评估、他人课程示例或参考资料算作本人的授课经历。课程文件不随网页发布。
+
+| 课程 | 正式名称 | 核对的 syllabus 学期 |
+| --- | --- | --- |
+| EE 030B | Fundamentals of Electric Circuits II | Spring 2026 |
+| EE 100A | Electronic Circuits I | Winter 2021 |
+| EE 100B | Electronic Circuits II | Spring 2025 |
+| EE 117 | Electromagnetics II | Winter 2018 |
+| EE 201 / MSE 207 | Applied Quantum Mechanics | Fall 2024 |
+| EE 204 | Advanced Electromagnetics | Spring 2022 |
+
+介绍强调从本科电路与电子设计到电磁学、研究生量子力学的教学广度，不声称未核实的教学奖项、学生评价或学习成效。
 
 
 ## 本轮核对记录（已获发布授权，2026-11-09）
