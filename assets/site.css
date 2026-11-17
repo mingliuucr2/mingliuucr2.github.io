@@ -423,6 +423,12 @@ address {
   font-style:italic;
 }
 @media(max-width:800px) {
+  .site-nav ul {
+    gap:0 12px;
+  }
+  .site-nav a {
+    font-size:13px;
+  }
   .section-header,.compact,.methods {
     grid-template-columns:1fr;
     gap:12px;
