@@ -66,9 +66,12 @@ h1,h2,h3 { font-family:Georgia,"Times New Roman",serif; font-weight:400; }
 .compact>div { max-width:730px; }
 .compact p { font-size:15px; }
 .teaching-level { margin:17px 0 7px; font-size:19px; }
-.course-list { display:grid; grid-template-columns:140px minmax(0,1fr); gap:5px 16px; margin:0; font-size:14px; }
+.course-list { display:grid; grid-template-columns:140px minmax(0,1fr); gap:13px 16px; margin:0; font-size:14px; }
 .course-list dt { color:var(--accent); font-weight:600; }
 .course-list dd { margin:0; }
+.course-list dd strong,.course-list dd span { display:block; }
+.course-list dd strong { color:var(--ink); font-weight:600; }
+.course-list dd span { margin-top:2px; color:var(--muted); line-height:1.5; }
 .contact-details { display:grid; grid-template-columns:82px minmax(0,1fr); gap:7px 16px; margin:0; font-size:14px; }
 .contact-details dt { color:var(--muted); }
 .contact-details dd { margin:0; overflow-wrap:anywhere; }
@@ -114,7 +117,9 @@ address { font-style:normal; }
   .research-area h3 { font-size:20px; }
   .research-figure>a { max-width:240px; }
   .compact { grid-template-columns:1fr; gap:12px; }
-  .course-list { grid-template-columns:110px minmax(0,1fr); }
+  .course-list { grid-template-columns:1fr; gap:0; }
+  .course-list dt:not(:first-child) { margin-top:13px; }
+  .course-list dd { margin-top:2px; }
 }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 @media print {

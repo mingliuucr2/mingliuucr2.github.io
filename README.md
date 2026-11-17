@@ -27,7 +27,7 @@ python3 -m http.server 8000 --bind 127.0.0.1
 3. 新论文先核对 DOI、完整标题、作者身份、期刊、卷页和年份，再更新 `publications.html`。如属精选论文，也更新首页的 `#publications`。不要从 Google Scholar 的引用数或封面条目推断正式论文信息。
 4. 课程以本人任课 syllabus 为准。主页的课程列表记录授课经历，不代表当学期课程安排。
 5. 用本地预览检查电脑和手机布局、图片、导航和外部链接。只有审阅通过后，再用 GitHub Desktop 检查改动、提交并点击 **Push origin**；GitHub Pages 部署完成后再检查公开网址。
-6. 修改 `assets/site.css` 后，同时将 `index.html` 和 `publications.html` 中的 `site.css?v=6` 版本号递增，以免浏览器继续显示缓存的旧样式。
+6. 修改 `assets/site.css` 后，同时将 `index.html` 和 `publications.html` 中的 `site.css?v=7` 版本号递增，以免浏览器继续显示缓存的旧样式。
 
 主页按本人要求不显示 Research Group 或组员名单。不要将内部实验记录、学生信息、课程资料、未发表图像或电路细节放入仓库。
 
