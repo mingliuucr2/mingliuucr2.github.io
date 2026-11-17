@@ -259,6 +259,9 @@ h1,h2,h3 {
 .explorations {
   padding-top:54px;
 }
+.explorations .section-header {
+  margin-bottom:52px;
+}
 .explore-grid {
   display:grid;
   grid-template-columns:1fr 1fr;
