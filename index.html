@@ -1,279 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Ming Liu at UC Riverside. Nanofocusing, near-field microscopy, TERS, quantum sensing, and physics-guided machine learning for nanoscale optics.">
-  <title>Ming Liu | Electrical &amp; Computer Engineering | UC Riverside</title>
-  <style>
-    /* All styles live here. No scripts, build tools, or external fonts. */
-    :root { --ink:#252a30; --muted:#626973; --blue:#174b78; --rule:#dce1e6; --gold:#b58a36; }
-    * { box-sizing:border-box; }
-    html { scroll-padding-top:24px; }
-    body { margin:0; background:#fff; color:var(--ink); font:17px/1.7 Georgia,"Times New Roman",serif; }
-    a { color:var(--blue); text-decoration-thickness:1px; text-underline-offset:3px; }
-    a:hover { text-decoration-thickness:2px; }
-    a:focus-visible { outline:2px solid var(--blue); outline-offset:5px; }
-    p { margin:0 0 1em; } p:last-child { margin-bottom:0; }
-    .page { max-width:1000px; margin:auto; padding:0 42px; }
-    .skip-link { position:absolute; top:-80px; left:16px; padding:8px 16px; background:white; z-index:2; }
-    .skip-link:focus { top:8px; }
-    .masthead { border-top:4px solid var(--blue); padding-top:50px; }
-    .identity { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; padding-bottom:30px; }
-    .profile-main { display:flex; align-items:center; gap:28px; min-width:0; }
-    .portrait { display:block; width:125px; height:150px; flex:none; object-fit:cover; }
-    h1 { font-size:49px; font-weight:400; letter-spacing:-1.5px; line-height:1.15; margin:0 0 15px; }
-    .affiliation { font:15px/1.65 Arial,Helvetica,sans-serif; color:var(--muted); }
-    .university { color:var(--ink); }
-    .profile-links { font:14px/1.8 Arial,Helvetica,sans-serif; text-align:right; white-space:nowrap; }
-    .profile-links a { display:block; }
-    nav { border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
-    nav ul { display:flex; flex-wrap:wrap; gap:0 29px; padding:8px 0; margin:0; list-style:none; }
-    nav a { display:inline-block; padding:7px 0; color:var(--ink); text-decoration:none; font:14px/1.5 Arial,Helvetica,sans-serif; }
-    nav a:hover { color:var(--blue); text-decoration:underline; }
-    .section { display:grid; grid-template-columns:150px minmax(0,1fr); gap:28px; padding:36px 0; border-bottom:1px solid var(--rule); }
-    h2 { margin:1px 0 0; color:var(--blue); font-size:23px; line-height:1.3; font-weight:400; }
-    h3 { margin:0 0 9px; font-size:20px; font-weight:400; line-height:1.35; }
-    .section-label { font:11px/1.5 Arial,Helvetica,sans-serif; letter-spacing:1.4px; text-transform:uppercase; color:var(--muted); margin:26px 0 18px; }
-    .interests { color:var(--muted); font-size:15px; }
-    .highlights { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:27px 30px; }
-    .highlight { border-top:2px solid var(--rule); padding-top:14px; }
-    .highlight:first-child { border-top-color:var(--gold); }
-    .highlight p { font-size:15px; line-height:1.65; margin-bottom:9px; }
-    .paper-links { font:12px/1.8 Arial,Helvetica,sans-serif; }
-    .publications { list-style:none; counter-reset:papers; margin:24px 0 0; padding:0; }
-    .publication { counter-increment:papers; position:relative; padding:0 0 22px 31px; }
-    .publication:last-child { padding-bottom:0; }
-    .publication::before { content:counter(papers,decimal-leading-zero); position:absolute; left:0; top:3px; font:11px/1.7 Arial,Helvetica,sans-serif; color:var(--muted); }
-    .paper-title { font-size:16px; line-height:1.5; }
-    .paper-authors { margin:5px 0 0; color:var(--muted); font-size:14px; line-height:1.5; }
-    .paper-venue { margin:3px 0 0; font-size:14px; line-height:1.5; }
-    .note { color:var(--muted); font-size:15px; }
-    .teaching-level { margin:22px 0 12px; font-size:18px; }
-    .course-list { display:grid; grid-template-columns:125px minmax(0,1fr); gap:9px 18px; margin:0; font-size:16px; }
-    .course-list dt { color:var(--blue); font:13px/1.9 Arial,Helvetica,sans-serif; }
-    .course-list dd { margin:0; }
-    address { font-style:normal; }
-    .contact-details { display:grid; grid-template-columns:65px minmax(0,1fr); gap:8px 18px; margin:0; font-size:16px; }
-    .contact-details dt { color:var(--muted); } .contact-details dd { margin:0; overflow-wrap:anywhere; }
-    footer { padding:23px 0 36px; display:flex; justify-content:space-between; gap:20px; color:var(--muted); font:12px/1.6 Arial,Helvetica,sans-serif; }
-    @media (max-width:680px) {
-      .page { padding:0 23px; } .masthead { padding-top:32px; }
-      .identity { display:block; padding-bottom:24px; } h1 { font-size:43px; }
-      .profile-main { align-items:flex-start; gap:18px; }
-      .portrait { width:90px; height:108px; }
-      .identity h1 { font-size:34px; }
-      .profile-links { text-align:left; margin-top:18px; white-space:normal; display:flex; flex-wrap:wrap; gap:5px 22px; }
-      nav ul { column-gap:22px; } .section { grid-template-columns:minmax(0,1fr); gap:18px; padding:28px 0; }
-      .highlights { column-gap:22px; } footer { flex-wrap:wrap; }
-    }
-    @media (max-width:440px) { .highlights { grid-template-columns:minmax(0,1fr); } }
-    @media print {
-      body { font-size:11pt; } .page { max-width:none; padding:0; } .masthead { padding-top:15px; }
-      nav,.skip-link,.back-to-top { display:none; } .section { padding:18px 0; }
-      .highlight,.publication { break-inside:avoid; } a { color:inherit; text-decoration:none; }
-    }
-  </style>
+  <meta name="description" content="Ming Liu, Professor of Electrical and Computer Engineering at UC Riverside. Developing measurement methods for nanoscale optics, quantum sensing, optoelectronic interfaces, and electrochemical dynamics.">
+  <title>Ming Liu | Measurement Science | UC Riverside</title>
+  <link rel="stylesheet" href="assets/site.css">
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="page">
-    <!-- UPDATE: Name, affiliation, and verified profile links. -->
-    <header class="masthead">
-      <div class="identity">
-        <div class="profile-main">
-          <img class="portrait" src="assets/ming-liu.jpg" alt="Ming Liu" width="250" height="300">
-          <div>
-          <h1>Ming Liu</h1>
-          <div class="affiliation">Department of Electrical and Computer Engineering<br><span class="university">University of California, Riverside</span></div>
-          </div>
-        </div>
-        <div class="profile-links">
-          <a href="https://scholar.google.com/citations?user=1bPwuWgAAAAJ&amp;hl=en">Google Scholar</a>
-          <a href="https://profiles.ucr.edu/app/home/profile/mingliu">UCR Faculty Profile</a>
-        </div>
+  <header class="site-header">
+    <div class="shell topline">
+      <div><a class="brand" href="#top">Ming Liu</a><div class="role">Professor · Electrical and Computer Engineering · UC Riverside</div></div>
+      <div class="top-links"><a href="https://scholar.google.com/citations?user=1bPwuWgAAAAJ&amp;hl=en">Google Scholar</a><a href="https://profiles.ucr.edu/app/home/profile/mingliu">UCR Faculty Profile</a><a href="mailto:ming@ece.ucr.edu">Email</a></div>
+    </div>
+    <nav class="site-nav" aria-label="Main navigation"><ul class="shell">
+      <li><a href="#research">Research</a></li>
+      <li><a href="#explorations">Current Explorations</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#graduate-advising">Graduate Advising</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul></nav>
+  </header>
+  <main class="shell" id="main">
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-intro"><div class="eyebrow">Ming Liu · University of California, Riverside</div><h1 id="hero-heading">Developing new ways to see, measure, and understand matter.</h1></div>
+      <img class="portrait" src="assets/ming-liu.jpg" alt="Portrait of Ming Liu" width="250" height="300">
+      <p class="hero-deck">From nanoscale light–matter interactions to quantum sensing and electrochemical dynamics, my research develops physical measurement techniques that reveal otherwise inaccessible processes. We combine nanoscale optics, electrical spectroscopy, and physics-guided computation to study materials, devices, and interfaces.</p>
+    </section>
+
+    <section class="section" id="research" aria-labelledby="research-heading">
+      <div class="section-header"><h2 id="research-heading">Research</h2><p>My work builds measurement tools around the scientific question: what physical processes can we resolve when light, electrical signals, and local probes meet at the nanoscale?</p></div>
+      <div class="research-list">
+        <article class="research-area">
+          <figure class="research-figure">
+            <a href="assets/nanofocusing-figure.png" aria-label="View the full nanofocusing research figure"><img src="assets/nanofocusing-figure.png" alt="Experimental schematic of a silver nanowire probe creating a nanoscale white-light source for optical spectroscopy" width="1200" height="879" loading="lazy"></a>
+            <figcaption>Figure from <a href="https://doi.org/10.1038/s41467-021-27216-5">Ma et al., Nature Communications (2021)</a>. <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</figcaption>
+          </figure>
+          <div class="research-copy"><span class="number">01 / OPTICAL MEASUREMENT</span><h3>Nanofocusing and Nanoscale Optical Measurements</h3><p class="question">How can light be delivered efficiently to nanometer-scale volumes?</p><p>We develop fiber-coupled plasmonic nanofocusing probes and near-field techniques to investigate light–matter interactions with nanoscale spatial resolution. Our high-external-efficiency platform concentrates more than 50% of the light delivered through an optical fiber into an optical hotspot approximately 5 nm in size. These techniques support lens-free optical nanoscopy, tip-enhanced Raman spectroscopy, and localized optical spectroscopy.</p><p class="references">Representative work: <a href="https://doi.org/10.1038/s41566-019-0456-9">Nature Photonics (2019)</a> · <a href="https://doi.org/10.1038/s41467-021-27216-5">Nature Communications (2021)</a> · <a href="https://doi.org/10.1021/acs.nanolett.8b03399">Nano Letters (2019)</a></p></div>
+        </article>
+        <article class="research-area">
+          <figure class="research-figure">
+            <a href="assets/nv-nanodiamond-figure.jpg" aria-label="View the full NV-nanodiamond research figure"><img src="assets/nv-nanodiamond-figure.jpg" alt="Published nanofocusing probe schematic showing an NV nanodiamond near a silver nanowire tip and fluorescence-lifetime data" width="666" height="318" loading="lazy"></a>
+            <figcaption>Unmodified figure from <a href="https://doi.org/10.1021/acs.nanolett.4c03163">Liang et al., Nano Letters (2024)</a>. <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>.</figcaption>
+          </figure>
+          <div class="research-copy"><span class="number">02 / QUANTUM SENSING</span><h3>Nanoscale Quantum Sensing</h3><p class="question">Can nanofocusing help position and optically read out quantum sensors?</p><p>We investigate plasmonic trapping and fluorescence of diamond nitrogen-vacancy (NV) nanodiamonds at a nanofocusing tip. We are developing optical excitation and optically detected magnetic resonance (ODMR) readout toward a new quantum imaging tool. Nanoscale magnetic imaging remains a research goal.</p><p class="references">Representative work: <a href="https://doi.org/10.1021/acs.nanolett.4c03163">Nano Letters (2024)</a></p></div>
+        </article>
+        <article class="research-area">
+          <figure class="research-figure">
+            <a href="assets/photocurrent-figure.jpg" aria-label="View the full photocurrent research figure"><img src="assets/photocurrent-figure.jpg" alt="Published schematic of near-field photocurrent measurement and photovoltaic and photothermoelectric effects at a MoS2-gold interface" width="747" height="432" loading="lazy"></a>
+            <figcaption>Figure from <a href="https://doi.org/10.1126/sciadv.adv7614">Xu et al., Science Advances (2025)</a>. <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.</figcaption>
+          </figure>
+          <div class="research-copy"><span class="number">03 / MATERIALS &amp; INTERFACES</span><h3>Optoelectronic Materials and Interfaces</h3><p class="question">Where and how does light become electrical current?</p><p>We develop spatially resolved techniques to separate optical, electrical, and thermal processes in nanoscale materials and devices. Our three-dimensional near-field photocurrent microscopy maps photovoltaic and photothermoelectric responses in van der Waals interfaces.</p><p class="references">Representative work: <a href="https://doi.org/10.1126/sciadv.adv7614">Science Advances (2025)</a></p></div>
+        </article>
       </div>
-      <nav aria-label="Main navigation"><ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#teaching">Teaching</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul></nav>
-    </header>
-    <main id="main">
-      <!-- UPDATE: About. Keep biographical statements tied to confirmed sources. -->
-      <section class="section" id="about" aria-labelledby="about-heading">
-        <h2 id="about-heading">About</h2>
-        <div>
-          <p>I am a faculty member in Electrical and Computer Engineering at the University of California, Riverside. My research centers on nanofocusing: concentrating light at the nanometer scale to study light–matter interactions, develop optical measurement tools, and understand nanoscale devices and interfaces.</p>
-          <p>My research also integrates physics-guided machine learning with nanoscale optical measurements, including data-driven microscopy, Bayesian optimization, and inverse design of photonic and plasmonic systems.</p>
-          <p class="note">I also serve as Graduate Advisor for Enrolled Students in the Department of Electrical and Computer Engineering. Current graduate students are welcome to contact me regarding academic progress, degree requirements, research arrangements, CPT/OPT-related academic matters, and other academic advising needs. Questions regarding TA applications and assignments should be directed to the ECE Graduate Student Affairs Office.</p>
-        </div>
-      </section>
-      <!-- UPDATE: Research highlights. Link every result to its published paper. -->
-      <section class="section" id="research" aria-labelledby="research-heading">
-        <h2 id="research-heading">Research</h2>
-        <div>
-          <p><strong>Our work on high-external-efficiency nanofocusing</strong> has shown how to concentrate more than 50% of the light delivered through an optical fiber into an optical hotspot approximately 5 nm in size. This approach opens new opportunities to study light–matter interactions at the nanoscale.</p>
-          <p class="paper-links"><a href="https://doi.org/10.1038/s41566-019-0456-9">Foundational paper · Nature Photonics · 2019</a></p>
-          <p>Nanofocusing is the central thread connecting my work in tip-enhanced Raman spectroscopy (TERS), near-field microscopy, photocurrent imaging, NV quantum sensing, and electrochemical interfaces. Machine learning provides a complementary route to designing optical structures and interpreting nanoscale measurements.</p>
-          <p class="interests">Nanofocusing · TERS &amp; near-field microscopy · Photocurrent · NV quantum sensing · Electrochemical interfaces · Machine learning</p>
-          <div class="section-label">Research directions and highlights</div>
-          <div class="highlights">
-            <article class="highlight">
-              <h3>Nanofocusing and near-field microscopy</h3>
-              <p>Efficient fiber-coupled nanofocusing enables lens-free Raman imaging at 1 nm resolution. A nanoscale white-light source extends transmission and scattering spectroscopy to 6 nm resolution on carbon nanotubes.</p>
-              <div class="paper-links"><a href="https://doi.org/10.1038/s41566-019-0456-9">Nature Photonics · 2019</a><br><a href="https://doi.org/10.1038/s41467-021-27216-5">Nature Communications · 2021</a></div>
-            </article>
-            <article class="highlight">
-              <h3>Physics-guided machine learning</h3>
-              <p>My work combines physics-guided neural networks and inverse design for photonic–plasmonic nanofocusing with ML-assisted optical characterization of nanoscale objects. Research interests also include Bayesian optimization for optical design and measurements.</p>
-              <div class="paper-links"><a href="https://doi.org/10.1021/acsami.2c05083">Inverse design · ACS AMI · 2022</a><br><a href="https://doi.org/10.1021/acsami.3c02448">ML-assisted microscopy · ACS AMI · 2023</a><br><a href="https://doi.org/10.1002/lpor.202100658">Deep learning · Laser &amp; Photonics Reviews · 2022</a></div>
-            </article>
-            <article class="highlight">
-              <h3>Seeing how light becomes electricity</h3>
-              <p>Three-dimensional near-field photocurrent imaging separates photovoltaic and photothermoelectric responses in MoS<sub>2</sub>–gold interfaces, revealing how local electrical and thermal processes shape photodetection.</p>
-              <div class="paper-links"><a href="https://doi.org/10.1126/sciadv.adv7614">Science Advances · 2025</a></div>
-            </article>
-            <article class="highlight">
-              <h3>TERS and electrochemical interfaces</h3>
-              <p>Remote-excitation silver-nanowire probes improve contrast in AFM-TERS imaging. A research direction is to extend nanofocused vibrational measurements to electrochemical interfaces, connecting local optical signals with interfacial processes.</p>
-              <div class="paper-links"><a href="https://doi.org/10.1021/acs.nanolett.8b03399">Remote-excitation TERS probes · Nano Letters · 2019</a><br><a href="https://doi.org/10.1021/acs.nanolett.6b02802">Silver-nanowire probes · Nano Letters · 2016</a></div>
-            </article>
-            <article class="highlight">
-              <h3>NV centers and quantum sensing</h3>
-              <p>Plasmonic trapping assembles nitrogen-vacancy nanodiamonds at a nanofocusing tip and enhances their fluorescence. We are developing this platform into a next-generation quantum imaging tool using optically detected magnetic resonance (ODMR). In ODMR, microwaves probe the NV centers’ spin states, while changes in their fluorescence provide an optical readout. Because the resonance depends on the local magnetic field, this approach could enable nanoscale magnetic imaging.</p>
-              <div class="paper-links"><a href="https://doi.org/10.1021/acs.nanolett.4c03163">Nano Letters · 2024</a></div>
-            </article>
-            <article class="highlight">
-              <h3>Graphene for on-chip optical modulation</h3>
-              <p>Waveguide-integrated graphene enables compact, broadband electrical control of light. A double-layer design further develops this approach for integrated optoelectronic devices.</p>
-              <div class="paper-links"><a href="https://doi.org/10.1038/nature10067">Nature · 2011</a><br><a href="https://doi.org/10.1021/nl204202k">Nano Letters · 2012</a></div>
-            </article>
-          </div>
-        </div>
-      </section>
-      <!-- UPDATE: Duplicate a publication li, edit metadata and DOI, keep newest first. -->
-      <section class="section" id="publications" aria-labelledby="publications-heading">
-        <h2 id="publications-heading">Publications</h2>
-        <div>
-          <p class="note">Journal articles in reverse chronological order. <a href="https://scholar.google.com/citations?user=1bPwuWgAAAAJ&amp;hl=en">View the full list on Google Scholar</a>.</p>
-          <ol class="publications">
-            <li class="publication">
-              <a class="paper-title" href="https://doi.org/10.1126/sciadv.adv7614">Deciphering photocurrent mechanisms at the nanoscale in van der Waals interfaces for enhanced optoelectronic applications</a>
-              <p class="paper-authors">D. Xu et al.</p>
-              <p class="paper-venue"><cite>Science Advances</cite> <strong>11</strong>, eadv7614 (2025).</p>
-            </li>
-            <li class="publication">
-              <a class="paper-title" href="https://doi.org/10.1021/acs.nanolett.4c03163">Enhanced Plasmonic Trapping and Fluorescent Emission of Nitrogen-Vacancy Nanodiamonds Using a High-Efficiency Nanofocusing Device</a>
-              <p class="paper-authors">B. Liang et al.</p>
-              <p class="paper-venue"><cite>Nano Letters</cite> <strong>24</strong>, 11661–11668 (2024).</p>
-            </li>
-            <li class="publication">
-              <a class="paper-title" href="https://doi.org/10.1021/acsami.3c02448">Machine Learning Enhanced Optical Microscopy for the Rapid Morphology Characterization of Silver Nanoparticles</a>
-              <p class="paper-authors">Y. Xu et al.</p>
-              <p class="paper-venue"><cite>ACS Applied Materials &amp; Interfaces</cite> <strong>15</strong>, 18244–18251 (2023).</p>
-            </li>
-            <li class="publication">
-              <a class="paper-title" href="https://doi.org/10.1021/acsami.2c05083">Physics-Guided Neural-Network-Based Inverse Design of a Photonic–Plasmonic Nanodevice for Superfocusing</a>
-              <p class="paper-authors">B. Liang et al.</p>
-              <p class="paper-venue"><cite>ACS Applied Materials &amp; Interfaces</cite> <strong>14</strong>, 27397–27404 (2022).</p>
-            </li>
-            <li class="publication">
-              <a class="paper-title" href="https://doi.org/10.1002/lpor.202100658">Strategical Deep Learning for Photonic Bound States in the Continuum</a>
-              <p class="paper-authors">X. Ma et al.</p>
-              <p class="paper-venue"><cite>Laser &amp; Photonics Reviews</cite> <strong>16</strong>, 2100658 (2022).</p>
-            </li>
-            <li class="publication">
-              <a class="paper-title" href="https://doi.org/10.1021/acsami.1c21226">Thermal Rectifier and Thermal Transistor of 1T/2H MoS<sub>2</sub> for Heat Flow Management</a>
-              <p class="paper-authors">X. Yang et al.</p>
-              <p class="paper-venue"><cite>ACS Applied Materials &amp; Interfaces</cite> <strong>14</strong>, 4434–4442 (2022).</p>
-            </li>
-            <li class="publication">
-              <a class="paper-title" href="https://doi.org/10.1038/s41467-021-27216-5">6 nm super-resolution optical transmission and scattering spectroscopic imaging of carbon nanotubes using a nanometer-scale white light source</a>
-              <p class="paper-authors">X. Ma et al.</p>
-              <p class="paper-venue"><cite>Nature Communications</cite> <strong>12</strong>, 6868 (2021).</p>
-            </li>
-            <li class="publication">
-              <a class="paper-title" href="https://doi.org/10.1021/acsami.0c07544">Experimental Study on Thermal Conductivity and Rectification in Suspended Monolayer MoS<sub>2</sub></a>
-              <p class="paper-authors">X. Yang et al.</p>
-              <p class="paper-venue"><cite>ACS Applied Materials &amp; Interfaces</cite> <strong>12</strong>, 28306–28312 (2020).</p>
-            </li>
-            <li class="publication">
-              <a class="paper-title" href="https://doi.org/10.1038/s41566-019-0456-9">High external-efficiency nanofocusing for lens-free near-field optical nanoscopy</a>
-              <p class="paper-authors">S. Kim et al.</p>
-              <p class="paper-venue"><cite>Nature Photonics</cite> <strong>13</strong>, 636–643 (2019).</p>
-            </li>
-            <li class="publication">
-              <a class="paper-title" href="https://doi.org/10.1021/acs.nanolett.8b03399">Toward High-Contrast Atomic Force Microscopy-Tip-Enhanced Raman Spectroscopy Imaging: Nanoantenna-Mediated Remote-Excitation on Sharp-Tip Silver Nanowire Probes</a>
-              <p class="paper-authors">X. Ma et al.</p>
-              <p class="paper-venue"><cite>Nano Letters</cite> <strong>19</strong>, 100–107 (2019).</p>
-            </li>
-            <li class="publication">
-              <a class="paper-title" href="https://doi.org/10.1021/acs.nanolett.7b03449">Capillary-Force-Assisted Clean-Stamp Transfer of Two-Dimensional Materials</a>
-              <p class="paper-authors">X. Ma et al.</p>
-              <p class="paper-venue"><cite>Nano Letters</cite> <strong>17</strong>, 6961–6967 (2017).</p>
-            </li>
-            <li class="publication">
-              <a class="paper-title" href="https://doi.org/10.1021/acs.nanolett.6b02802">Sharp-Tip Silver Nanowires Mounted on Cantilevers for High-Aspect-Ratio High-Resolution Imaging</a>
-              <p class="paper-authors">X. Ma et al.</p>
-              <p class="paper-venue"><cite>Nano Letters</cite> <strong>16</strong>, 6896–6902 (2016).</p>
-            </li>
-            <li class="publication">
-              <a class="paper-title" href="https://doi.org/10.1021/nl204202k">Double-Layer Graphene Optical Modulator</a>
-              <p class="paper-authors"><strong>M. Liu</strong>, X. Yin, and X. Zhang.</p>
-              <p class="paper-venue"><cite>Nano Letters</cite> <strong>12</strong>, 1482–1485 (2012).</p>
-            </li>
-            <li class="publication">
-              <a class="paper-title" href="https://doi.org/10.1038/nature10067">A graphene-based broadband optical modulator</a>
-              <p class="paper-authors"><strong>M. Liu</strong> et al.</p>
-              <p class="paper-venue"><cite>Nature</cite> <strong>474</strong>, 64–67 (2011).</p>
-            </li>
-            <li class="publication">
-              <a class="paper-title" href="https://doi.org/10.1038/nnano.2010.128">Light-driven nanoscale plasmonic motors</a>
-              <p class="paper-authors"><strong>M. Liu</strong>, T. Zentgraf, Y. Liu, G. Bartal, and X. Zhang.</p>
-              <p class="paper-venue"><cite>Nature Nanotechnology</cite> <strong>5</strong>, 570–573 (2010).</p>
-            </li>
-            <li class="publication">
-              <a class="paper-title" href="https://doi.org/10.1103/PhysRevLett.101.047401">Plasmon-Induced Transparency in Metamaterials</a>
-              <p class="paper-authors">S. Zhang, D. A. Genov, Y. Wang, <strong>M. Liu</strong>, and X. Zhang.</p>
-              <p class="paper-venue"><cite>Physical Review Letters</cite> <strong>101</strong>, 047401 (2008).</p>
-            </li>
-          </ol>
-        </div>
-      </section>
-      <!-- UPDATE: Courses taught. Confirm course titles and instructor identity against the syllabus. -->
-      <section class="section" id="teaching" aria-labelledby="teaching-heading">
-        <h2 id="teaching-heading">Teaching</h2>
-        <div>
-          <p>My teaching spans the electrical engineering curriculum, from foundational circuit analysis and electronic design to electromagnetics and graduate-level quantum mechanics. This breadth allows me to connect practical engineering methods with the physical principles behind modern devices and optical systems.</p>
-          <p class="note">Courses I have taught at UC Riverside include:</p>
-          <h3 class="teaching-level">Undergraduate</h3>
-          <dl class="course-list">
-            <dt>EE 030B</dt><dd>Fundamentals of Electric Circuits II</dd>
-            <dt>EE 100A</dt><dd>Electronic Circuits I</dd>
-            <dt>EE 100B</dt><dd>Electronic Circuits II</dd>
-            <dt>EE 117</dt><dd>Electromagnetics II</dd>
-          </dl>
-          <h3 class="teaching-level">Graduate</h3>
-          <dl class="course-list">
-            <dt>EE 201 / MSE 207</dt><dd>Applied Quantum Mechanics</dd>
-            <dt>EE 204</dt><dd>Advanced Electromagnetics</dd>
-          </dl>
-        </div>
-      </section>
-      <!-- UPDATE: Contact details sourced from the UCR faculty profile. -->
-      <section class="section" id="contact" aria-labelledby="contact-heading">
-        <h2 id="contact-heading">Contact</h2>
-        <address><dl class="contact-details">
-          <dt>Email</dt><dd><a href="mailto:ming@ece.ucr.edu">ming@ece.ucr.edu</a></dd>
-          <dt>Office</dt><dd>321 Winston Chung Hall</dd>
-          <dt>Address</dt><dd>Department of Electrical and Computer Engineering<br>University of California, Riverside<br>Riverside, CA 92521</dd>
-        </dl></address>
-      </section>
-    </main>
-    <footer><span>Ming Liu · University of California, Riverside</span><a class="back-to-top" href="#top">Back to top ↑</a></footer>
-  </div>
+    </section>
+
+    <aside class="methods" aria-labelledby="methods-heading"><h2 id="methods-heading">Physics-guided machine learning</h2><div><p>We combine physical models and machine learning to design experiments, optimize photonic and plasmonic devices, and extract information from complex measurements. Current interests include physics-guided neural networks, inverse design, Bayesian optimization, and data-driven microscopy.</p><p class="references">Published work: <a href="https://doi.org/10.1021/acsami.2c05083">inverse design (2022)</a> · <a href="https://doi.org/10.1021/acsami.3c02448">ML-assisted microscopy (2023)</a> · <a href="https://doi.org/10.1002/lpor.202100658">photonic deep learning (2022)</a></p></div></aside>
+
+    <section class="section explorations" id="explorations" aria-labelledby="explorations-heading">
+      <div class="section-header"><h2 id="explorations-heading">Current Explorations</h2><p>Alongside established research, we explore new measurement concepts through hands-on experimentation, instrument development, and physics-guided modeling.</p></div>
+      <article class="explore-card"><h3>Nonlinear Electrochemical Spectroscopy</h3><p>I am exploring how nonlinear electrical spectroscopy and time-resolved measurements can reveal dynamic processes at electrochemical interfaces. Conventional impedance spectroscopy primarily probes the linear response near a given operating state; nonlinear responses may provide complementary information about interfacial kinetics and how they evolve under electrical perturbations. This exploratory project is motivated by the possibility of developing more informative diagnostic methods for electrochemical systems and batteries.</p><span class="status">Ongoing exploratory research</span></article>
+    </section>
+
+    <section class="section" id="publications" aria-labelledby="publications-heading">
+      <div class="section-header"><h2 id="publications-heading">Selected Publications</h2><p>Selected papers connect current research directions to the experimental methods behind them. The complete list remains available separately.</p></div>
+      <ol class="selected-list">
+        <li><a href="https://doi.org/10.1126/sciadv.adv7614">Deciphering photocurrent mechanisms at the nanoscale in van der Waals interfaces for enhanced optoelectronic applications</a><small>Science Advances · 2025</small></li>
+        <li><a href="https://doi.org/10.1021/acs.nanolett.4c03163">Enhanced Plasmonic Trapping and Fluorescent Emission of Nitrogen-Vacancy Nanodiamonds Using a High-Efficiency Nanofocusing Device</a><small>Nano Letters · 2024</small></li>
+        <li><a href="https://doi.org/10.1021/acsami.3c02448">Machine Learning Enhanced Optical Microscopy for the Rapid Morphology Characterization of Silver Nanoparticles</a><small>ACS Applied Materials &amp; Interfaces · 2023</small></li>
+        <li><a href="https://doi.org/10.1021/acsami.2c05083">Physics-Guided Neural-Network-Based Inverse Design of a Photonic–Plasmonic Nanodevice for Superfocusing</a><small>ACS Applied Materials &amp; Interfaces · 2022</small></li>
+        <li><a href="https://doi.org/10.1038/s41467-021-27216-5">6 nm super-resolution optical transmission and scattering spectroscopic imaging of carbon nanotubes using a nanometer-scale white light source</a><small>Nature Communications · 2021</small></li>
+        <li><a href="https://doi.org/10.1038/s41566-019-0456-9">High external-efficiency nanofocusing for lens-free near-field optical nanoscopy</a><small>Nature Photonics · 2019</small></li>
+        <li><a href="https://doi.org/10.1021/acs.nanolett.8b03399">Toward High-Contrast Atomic Force Microscopy-Tip-Enhanced Raman Spectroscopy Imaging: Nanoantenna-Mediated Remote-Excitation on Sharp-Tip Silver Nanowire Probes</a><small>Nano Letters · 2019</small></li>
+        <li><a href="https://doi.org/10.1038/nature10067">A graphene-based broadband optical modulator</a><small>Nature · 2011 · foundational work</small></li>
+      </ol>
+      <p class="all-publications"><a href="publications.html">Full Publication List →</a> &nbsp;·&nbsp; <a href="https://scholar.google.com/citations?user=1bPwuWgAAAAJ&amp;hl=en">Google Scholar</a></p>
+    </section>
+
+    <section class="section compact" id="about" aria-labelledby="about-heading"><h2 id="about-heading">About</h2><div><p>I am a Professor of Electrical and Computer Engineering at the University of California, Riverside. I received my Ph.D. in Applied Physics from UC Berkeley in 2010 and was a postdoctoral researcher there before joining UCR. My earlier work includes graphene optical modulators and light-driven plasmonic motors.</p><p class="references"><a href="https://profiles.ucr.edu/app/home/profile/mingliu">UCR faculty profile</a></p></div></section>
+
+    <section class="section compact" id="teaching" aria-labelledby="teaching-heading"><h2 id="teaching-heading">Teaching</h2><div><p>My teaching spans circuit analysis, electronic design, electromagnetics, and graduate-level quantum mechanics, connecting practical engineering methods with the physics of modern devices.</p><p>Courses I have taught at UC Riverside include:</p><h3 class="teaching-level">Undergraduate</h3><dl class="course-list"><dt>EE 030B</dt><dd>Fundamentals of Electric Circuits II</dd><dt>EE 100A</dt><dd>Electronic Circuits I</dd><dt>EE 100B</dt><dd>Electronic Circuits II</dd><dt>EE 117</dt><dd>Electromagnetics II</dd></dl><h3 class="teaching-level">Graduate</h3><dl class="course-list"><dt>EE 201 / MSE 207</dt><dd>Applied Quantum Mechanics</dd><dt>EE 204</dt><dd>Advanced Electromagnetics</dd></dl></div></section>
+
+    <section class="section compact" id="graduate-advising" aria-labelledby="advising-heading"><h2 id="advising-heading">Graduate Advising</h2><div><p>I also serve as Graduate Advisor for Enrolled Students in the Department of Electrical and Computer Engineering. Current graduate students are welcome to contact me regarding academic progress, degree requirements, research arrangements, CPT/OPT-related academic matters, and other academic advising needs. Questions regarding TA applications and assignments should be directed to the ECE Graduate Student Affairs Office.</p></div></section>
+
+    <section class="section compact" id="contact" aria-labelledby="contact-heading"><h2 id="contact-heading">Contact</h2><address><dl class="contact-details"><dt>Email</dt><dd><a href="mailto:ming@ece.ucr.edu">ming@ece.ucr.edu</a></dd><dt>Office</dt><dd>321 Winston Chung Hall</dd><dt>Address</dt><dd>Department of Electrical and Computer Engineering<br>University of California, Riverside<br>Riverside, CA 92521</dd></dl></address></section>
+  </main>
+  <footer class="site-footer shell"><span>Ming Liu · University of California, Riverside</span><a href="#top">Back to top ↑</a></footer>
 </body>
 </html>
